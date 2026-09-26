@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEO RAFFSTR JOKI ELITE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" class="loader-screen">
+    <div class="loader-ring"></div>
+    <h1>CEO RAFFSTR</h1>
+    <p>WELCOME TO WEBSITE JOKI ELITE</p>
+    <span>Tunggu sebentar...</span>
+  </div>
+
+  <main id="app" class="hidden">
+    <header class="topbar">
+      <div>
+        <small>WELCOME TO</small>
+        <h1>CEO RAFFSTR <b>JOKI ELITE</b></h1>
+      </div>
+      <button class="icon-btn" onclick="showPage('profile')">👤</button>
+    </header>
+
+    <section id="joki" class="page active">
+      <div class="hero">
+        <span class="badge">⚡ FAST SERVICE</span>
+        <h2>JOKI KONTAK</h2>
+        <p>Silahkan pilih paket terlebih dahulu sebelum melakukan order.</p>
+      </div>
+
+      <div id="packageGrid" class="grid"></div>
+
+      <div class="selected-box">
+        <p>Paket dipilih</p>
+        <h3 id="selectedPackage">Belum ada paket</h3>
+        <button class="primary" onclick="orderSelected()">ORDER SEKARANG →</button>
+      </div>
+    </section>
+
+    <section id="payment" class="page">
+      <div class="section-title">
+        <span>💳</span>
+        <div><h2>Metode Pembayaran</h2><p>Silahkan selesaikan pembayaran.</p></div>
+      </div>
+
+      <div class="payment-card">
+        <span class="payment-logo">DANA</span>
+        <h3>083867468118</h3>
+        <p>A/N : <b>LIP</b></p>
+      </div>
+
+      <div class="proof-card">
+        <h3>📸 Silahkan kirim bukti transfer disini</h3>
+        <input id="proof" type="text" placeholder="Tempel link / keterangan bukti transfer">
+        <button class="primary" onclick="confirmPayment()">KONFIRMASI</button>
+      </div>
+    </section>
+
+    <section id="digital" class="page">
+      <div class="section-title">
+        <span>🛒</span>
+        <div><h2>Digital Store</h2><p>Pilih produk/jasa yang kamu butuhkan.</p></div>
+      </div>
+      <div id="digitalGrid" class="grid"></div>
+    </section>
+
+    <section id="profile" class="page">
+      <div class="profile-card">
+        <div class="avatar" id="avatar">R</div>
+        <h2 id="profileName">RAFFSTR</h2>
+        <button class="secondary" onclick="changeName()">✏️ Ubah Nama</button>
+        <button class="secondary" onclick="changePhoto()">🖼️ Ubah Foto Profil</button>
+      </div>
+
+      <div class="history-card">
+        <h3>🧾 Riwayat Pembelian</h3>
+        <div id="historyList"><p class="muted">Belum ada riwayat pembelian.</p></div>
+      </div>
+
+      <button class="danger" onclick="logout()">🚪 LOGOUT</button>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-page="joki" onclick="showPage('joki')">⚡<span>Joki</span></button>
+      <button class="nav-item" data-page="digital" onclick="showPage('digital')">🛍️<span>Digital</span></button>
+      <button class="nav-item" data-page="profile" onclick="showPage('profile')">👤<span>Profil</span></button>
+    </nav>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
